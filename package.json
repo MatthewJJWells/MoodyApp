@@ -32,8 +32,7 @@
   "lint-staged": {
     "*.(ts|tsx)": [
       "eslint",
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "private": true
