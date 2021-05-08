@@ -1,12 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { FormButton } from './components';
 
 const App: React.FC<Record<string, never>> = () => {
   return (
     <View style={styles.container}>
-      <Text>Opn up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <FormButton></FormButton>
     </View>
   );
 };
