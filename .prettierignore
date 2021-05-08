@@ -15,3 +15,7 @@ web-build/
 .eslintignore
 .eslintrc.js
 .eslintrc.json
+
+.husky
+assets
+babel.config.js
