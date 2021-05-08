@@ -5,7 +5,7 @@ import { StyleSheet, Text, View } from 'react-native';
 const App: React.FC<Record<string, never>> = () => {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text>Opn up App.tsx to start working on your app!</Text>
       <StatusBar style="auto" />
     </View>
   );
