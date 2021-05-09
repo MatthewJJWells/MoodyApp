@@ -11,16 +11,16 @@ const SignUp: React.FC<Record<string, never>> = () => {
       <View style={styles.footer}>
         <Text>Sign Up Screen</Text>
         <View style={styles.inputContainer}>
-          <TextInput  placeholder='Email'></TextInput>
+          <TextInput style={styles.textInputStyle} placeholder='Email'></TextInput>
         </View >
         <View style={styles.inputContainer}>
-          <TextInput  placeholder='Username'></TextInput>
+          <TextInput style={styles.textInputStyle} placeholder='Username'></TextInput>
         </View >
         <View style={styles.inputContainer}>
-          <TextInput placeholder='Phone'></TextInput>
+          <TextInput style={styles.textInputStyle} placeholder='Phone'></TextInput>
         </View>
         <View style={styles.inputContainer}>
-          <TextInput placeholder='Password'></TextInput>
+          <TextInput style={styles.textInputStyle} placeholder='Password'></TextInput>
         </View>
         <TouchableOpacity style={styles.buttonStyle}>
           <Text style={styles.buttonText}>Log In</Text>

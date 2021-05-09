@@ -26,6 +26,9 @@ const styles = StyleSheet.create({
     // backgroundColor: 'red',
     marginVertical: 7.5,
   },
+  textInputStyle: {
+    color: '#fefefe',
+  },
   header: {
     display: 'flex',
     alignItems: 'center',

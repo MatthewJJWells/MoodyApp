@@ -6,9 +6,9 @@ import { Home, LogIn, SignUp, Dashboard } from './Screens/index';
 const App: React.FC<Record<string, never>> = () => {
   return (
     <View style={styles.container}>
-      {/* <Home /> */}
+      <Home />
       {/* <LogIn /> */}
-      <SignUp />
+      {/* <SignUp /> */}
       {/* <Dashboard /> */}
       <StatusBar style="auto" />
     </View>
