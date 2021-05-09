@@ -49,10 +49,8 @@ const styles = StyleSheet.create({
     width: 300,
     height: 50,
     borderRadius: 10,
-    borderWidth: 2,
-    borderColor: '#fefefe',
+    backgroundColor: '#fefefe',
     marginVertical: 7.5,
-
   },
   buttonText: {
     textAlign: 'center'
