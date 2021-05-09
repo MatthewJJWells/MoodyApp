@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 const LogIn: React.FC<Record<string, never>> = () => {
   return (
     <View>
-      <Text>LogIn Screen</Text>
+      <Text>Delete this log in screen</Text>
     </View>
   );
 };
