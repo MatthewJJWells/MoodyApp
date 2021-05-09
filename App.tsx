@@ -6,10 +6,10 @@ import { Home, LogIn, SignUp, Dashboard } from './Screens/index';
 const App: React.FC<Record<string, never>> = () => {
   return (
     <View style={styles.container}>
-      <Home />
-      {/* <LogIn />
+      {/* <Home /> */}
+      {/* <LogIn /> */}
       <SignUp />
-      <Dashboard /> */}
+      {/* <Dashboard /> */}
       <StatusBar style="auto" />
     </View>
   );

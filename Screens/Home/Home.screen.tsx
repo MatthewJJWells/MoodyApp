@@ -7,7 +7,7 @@ const Home: React.FC<Record<string, never>> = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text>Moody App</Text>
+        <Text style={{fontSize: 40}}>Moody App</Text>
       </View>
       <View style={styles.footer}>
         <Text>Home/Log In Screen</Text>
