@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Home, LogIn } from './Screens/index';
+import { Home, LogIn, SignUp } from './Screens/index';
 
 const App: React.FC<Record<string, never>> = () => {
   return (
@@ -9,6 +9,7 @@ const App: React.FC<Record<string, never>> = () => {
       <Text>Open up App.tsx to start working on your app!</Text>
       <Home />
       <LogIn />
+      <SignUp />
       <StatusBar style="auto" />
     </View>
   );
