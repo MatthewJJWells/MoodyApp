@@ -3,7 +3,10 @@ import styles from './Home.style';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { FormButton } from '../../components';
 
-const Home: React.FC<Record<string, never>> = () => {
+const Home: React.FC<{}> = ({ navigation }) => {
+  function navigationSignUp() {
+    navigation.navigate('Sign Up');
+  }
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -24,7 +27,10 @@ const Home: React.FC<Record<string, never>> = () => {
           ></TextInput>
         </View>
         <FormButton buttonName="Login"></FormButton>
-        <FormButton buttonName="Sign up"></FormButton>
+        <FormButton
+          buttonName="Sign Up"
+          onPress={navigationSignUp}
+        ></FormButton>
       </View>
     </View>
   );
