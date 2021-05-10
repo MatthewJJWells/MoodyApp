@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Home.style';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 import { FormButton } from '../../components';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../App';
