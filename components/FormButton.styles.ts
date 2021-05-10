@@ -4,7 +4,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
+    alignItems: 'center',
     borderWidth: 2,
+    width: '50%',
+    height: '10%',
   },
 });
 
