@@ -6,7 +6,7 @@ import { Home } from './Screens/index';
 const App: React.FC<Record<string, never>> = () => {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text>Open up App.tsx to start working on your app!!</Text>
       <Home />
       <StatusBar style="auto" />
     </View>
