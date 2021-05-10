@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
 import { Home, LogIn, SignUp, Dashboard } from './Screens/index';
+import { StyleSheet, Text, View } from 'react-native';
+import { FormButton } from './components';
 
 const App: React.FC<Record<string, never>> = () => {
   return (
@@ -10,7 +11,6 @@ const App: React.FC<Record<string, never>> = () => {
       {/* <LogIn /> */}
       {/* <SignUp /> */}
       {/* <Dashboard /> */}
-      <StatusBar style="auto" />
     </View>
   );
 };
