@@ -2,11 +2,19 @@ import React from 'react';
 import styles from './Home.style';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { FormButton } from '../../components';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../App';
 
-const Home: React.FC<{}> = ({ navigation }) => {
-  function navigationSignUp() {
-    navigation.navigate('Sign Up');
-  }
+type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
+
+interface HomeProps {
+  navigation: HomeScreenNavigationProp;
+}
+
+const Home: React.FC<HomeProps> = ({ navigation }) => {
+  const navigationSignUp = () => {
+    navigation.navigate('SignUp');
+  };
   return (
     <View style={styles.container}>
       <View style={styles.header}>

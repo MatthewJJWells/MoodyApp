@@ -2,11 +2,22 @@ import React from 'react';
 import styles from './SignUp.style';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { FormButton } from '../../components';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../App';
 
-const SignUp: React.FC<{}> = ({ navigation }) => {
-  function navigationCreateAccount() {
+type SignUpScreenNavigationProp = StackNavigationProp<
+  RootStackParamList,
+  'SignUp'
+>;
+
+interface SignupProps {
+  navigation: SignUpScreenNavigationProp;
+}
+
+const SignUp: React.FC<SignupProps> = ({ navigation }) => {
+  const navigationCreateAccount = () => {
     navigation.navigate('Home');
-  }
+  };
   return (
     <View style={styles.container}>
       <View style={styles.header}>
