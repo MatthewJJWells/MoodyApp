@@ -11,8 +11,6 @@ const App: React.FC<Record<string, never>> = () => {
       {/* <LogIn /> */}
       {/* <SignUp /> */}
       {/* <Dashboard /> */}
-      <StatusBar style="auto" />
-      <FormButton></FormButton>
     </View>
   );
 };

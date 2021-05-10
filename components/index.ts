@@ -1,3 +1,3 @@
-import FormButton from './FormButton.screen';
+import FormButton from './FormButton/FormButton.screen';
 
 export { FormButton };
