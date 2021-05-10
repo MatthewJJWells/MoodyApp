@@ -2,8 +2,19 @@ import React from 'react';
 import styles from './Home.style';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { FormButton } from '../../components';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../App';
 
-const Home: React.FC<Record<string, never>> = () => {
+type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
+
+interface HomeProps {
+  navigation: HomeScreenNavigationProp;
+}
+
+const Home: React.FC<HomeProps> = ({ navigation }) => {
+  const navigationSignUp = () => {
+    navigation.navigate('SignUp');
+  };
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -24,7 +35,10 @@ const Home: React.FC<Record<string, never>> = () => {
           ></TextInput>
         </View>
         <FormButton buttonName="Login"></FormButton>
-        <FormButton buttonName="Sign up"></FormButton>
+        <FormButton
+          buttonName="Sign Up"
+          onPress={navigationSignUp}
+        ></FormButton>
       </View>
     </View>
   );
