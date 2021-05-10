@@ -1,11 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Home } from './Screens/index';
 
 const App: React.FC<Record<string, never>> = () => {
   return (
     <View style={styles.container}>
-      <Text>Opn up App.tsx to start working on your app!</Text>
+      <Text>Open up App.tsx to start working on your app!</Text>
+      <Home />
       <StatusBar style="auto" />
     </View>
   );
