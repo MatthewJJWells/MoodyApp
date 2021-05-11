@@ -15,7 +15,7 @@ interface LoginProps {
   navigation: LoginScreenNavigationProp;
 }
 
-const Login: React.FC<LoginProps> = ({ navigation }) => {
+const Login: React.FC<LoginProps> = ({ navigation, submit }) => {
   const navigationSignUp = () => {
     navigation.navigate('SignUp');
   };
@@ -38,7 +38,7 @@ const Login: React.FC<LoginProps> = ({ navigation }) => {
             placeholder="Password"
           ></TextInput>
         </View>
-        <FormButton buttonName="Login"></FormButton>
+        <FormButton buttonName="Login" onPress={submit}></FormButton>
         <FormButton
           buttonName="Sign Up"
           onPress={navigationSignUp}

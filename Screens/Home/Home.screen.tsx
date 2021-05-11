@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dashboard, Login, SignUp } from '../index';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { connect } from 'react-redux';
@@ -12,30 +12,26 @@ export type RootStackParamList = {
 
 const Stack = createStackNavigator<RootStackParamList>();
 
-const Home: React.FC<Record<string, never>> = ({ isLoggedIn }) => {
+const Home: React.FC<Record<string, never>> = ({ userName, isLoggedIn }) => {
+  console.log(isLoggedIn, userName);
+  if (isLoggedIn) {
+    return <Dashboard />;
+  }
   return (
-    <View>
-      {isLoggedIn ? (
-        <Dashboard />
-      ) : (
-        <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen
-              name="Login"
-              component={Login}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen name="SignUp" component={SignUp} />
-          </Stack.Navigator>
-        </NavigationContainer>
-      )}
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="SignUp" component={SignUp} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
 const mapStateToProps = (state: { isLoggedIn: boolean; userName: string }) => {
-  console.log('andres label: ', state);
-
   return {
     isLoggedIn: state.isLoggedIn,
   };

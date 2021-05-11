@@ -25,6 +25,8 @@ const userReducer = (state = initialState, action: AnyAction): any => {
         isLoggedIn: false,
         userName: null,
       };
+    default:
+      return state;
   }
 };
 
