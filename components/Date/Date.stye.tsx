@@ -5,15 +5,17 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    width: 350,
-    height: 80,
+    // width: 60,
+    // height: 80,
+    padding: 10,
     borderRadius: 10,
-    backgroundColor: '#fefefe',
+    backgroundColor: '#a178b1',
     marginVertical: 7.5,
   },
   buttonText: {
     textAlign: 'center',
-    fontSize: 25,
+    color: '#fefefe',
+    fontSize: 30,
   },
 });
 

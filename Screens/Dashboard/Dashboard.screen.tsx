@@ -2,13 +2,14 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import styles from './DashBoard.style';
 
-import { MoodEntryButton, MoodType } from '../../Components/index';
+import { MoodEntryButton, MoodType, Date } from '../../Components/index';
 
 const Dashboard: React.FC<Record<string, never>> = () => {
   return (
     <View style={styles.container}>
+      <Date />
       <MoodEntryButton></MoodEntryButton>
-      <MoodType></MoodType>
+      {/* <MoodType></MoodType> */}
     </View>
   );
 };
