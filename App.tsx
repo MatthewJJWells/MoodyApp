@@ -1,42 +1,18 @@
 import React from 'react';
-import { Dashboard, Home, SignUp } from './Screens/index';
-import { StyleSheet, View, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { connect } from 'react-redux';
+import { Home } from './Screens/index';
+import { Provider } from 'react-redux';
+import configureStore from './Store/configureStore';
 
-export type RootStackParamList = {
-  Home: undefined;
-  SignUp: undefined;
-};
+const store = configureStore();
 
-const Stack = createStackNavigator<RootStackParamList>();
+const App: React.FC<Record<string, never>> = () => {
+  console.log('this is the state: ', store);
 
-const App: React.FC<Record<string, never>> = ({ isLoggedIn }) => {
   return (
-    <View>
-      {isLoggedIn ? (
-        <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen
-              name="Home"
-              component={Home}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen name="SignUp" component={SignUp} />
-          </Stack.Navigator>
-        </NavigationContainer>
-      ) : (
-        <Dashboard></Dashboard>
-      )}
-    </View>
+    <Provider store={store}>
+      <Home />
+    </Provider>
   );
 };
 
-const mapStateToProps = (state: { isLoggedIn: boolean }) => {
-  return {
-    isLoggedIn: state.isLoggedIn,
-  };
-};
-
-export default connect(mapStateToProps)(App);
+export default App;

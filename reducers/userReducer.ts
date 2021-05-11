@@ -1,5 +1,6 @@
 /* eslint-disable indent */
 import { AnyAction } from 'redux';
+import { LOGIN, LOGOUT } from '../constants';
 
 interface userState {
   isLoggedIn: boolean;
@@ -12,13 +13,13 @@ const initialState: userState = {
 
 const userReducer = (state = initialState, action: AnyAction): any => {
   switch (action.type) {
-    case 'LOGIN':
+    case LOGIN:
       return {
         ...state,
         isLoggedIn: true,
         userName: action.payload,
       };
-    case 'LOGOUT':
+    case LOGOUT:
       return {
         ...state,
         isLoggedIn: false,

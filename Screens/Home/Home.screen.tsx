@@ -1,55 +1,44 @@
 import React from 'react';
-import styles from './Home.style';
-import { View, Text, TextInput } from 'react-native';
-import { FormButton } from '../../components';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../App';
+import { Dashboard, Login, SignUp } from '../index';
+import { View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { connect } from 'react-redux';
-type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
 
-interface HomeProps {
-  navigation: HomeScreenNavigationProp;
-}
+export type RootStackParamList = {
+  Login: undefined;
+  SignUp: undefined;
+};
 
-const Home: React.FC<HomeProps | any> = ({ navigation, submit }) => {
-  const navigationSignUp = () => {
-    navigation.navigate('SignUp');
-  };
+const Stack = createStackNavigator<RootStackParamList>();
+
+const Home: React.FC<Record<string, never>> = ({ isLoggedIn }) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={{ fontSize: 40 }}>Moody App</Text>
-      </View>
-      <View style={styles.footer}>
-        <Text>Home/Log In Screen</Text>
-        <View style={styles.inputContainer}>
-          <TextInput
-            style={styles.textInputStyle}
-            placeholder="Email"
-          ></TextInput>
-        </View>
-        <View style={styles.inputContainer}>
-          <TextInput
-            style={styles.textInputStyle}
-            placeholder="Password"
-          ></TextInput>
-        </View>
-        <FormButton buttonName="Login" onPress={submit()}></FormButton>
-        <FormButton
-          buttonName="Sign Up"
-          onPress={navigationSignUp}
-        ></FormButton>
-      </View>
+    <View>
+      {isLoggedIn ? (
+        <Dashboard />
+      ) : (
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen
+              name="Login"
+              component={Login}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen name="SignUp" component={SignUp} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      )}
     </View>
   );
 };
 
-const mapDispatchToProps = (
-  dispatch: (arg0: { type: string; payload: string }) => void,
-) => {
+const mapStateToProps = (state: { isLoggedIn: boolean; userName: string }) => {
+  console.log('andres label: ', state);
+
   return {
-    submit: () => dispatch({ type: 'LOGIN', payload: 'Matt' }),
+    isLoggedIn: state.isLoggedIn,
   };
 };
 
-export default connect(null, mapDispatchToProps)(Home);
+export default connect(mapStateToProps)(Home);
