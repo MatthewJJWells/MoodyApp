@@ -10,7 +10,7 @@ const initialState: userState = {
   userName: null,
 };
 
-const userReducer = (state = initialState, action: AnyAction): unknown => {
+const userReducer = (state = initialState, action: AnyAction): any => {
   switch (action.type) {
     case 'LOGIN':
       return {
