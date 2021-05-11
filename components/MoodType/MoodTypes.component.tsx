@@ -1,13 +1,13 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
-import styles from './MoodEntryButton.style';
+import styles from './MoodTypes.style';
 
-const MoodEntryButton: React.FC<Record<string, never>> = () => {
+const MoodType: React.FC<Record<string, never>> = () => {
   return (
     <TouchableOpacity style={styles.buttonStyle}>
-      <Text>Add Mood</Text>
+      <Text style={styles.buttonText}>Happy</Text>
     </TouchableOpacity>
   );
 };
 
-export default MoodEntryButton;
+export default MoodType;
