@@ -8,6 +8,7 @@ const Dashboard: React.FC<Record<string, never>> = () => {
   return (
     <View style={styles.container}>
       <Date />
+      <View style={styles.entriesContainer}></View>
       <MoodEntryButton></MoodEntryButton>
       {/* <MoodType></MoodType> */}
     </View>
