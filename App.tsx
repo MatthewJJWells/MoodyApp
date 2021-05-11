@@ -17,7 +17,7 @@ const App: React.FC<Record<string, never>> = () => {
       <Stack.Navigator>
         <Stack.Screen
           name="Home"
-          component={Home}
+          component={Dashboard}
           options={{ headerShown: false }}
         />
         <Stack.Screen name="SignUp" component={SignUp} />
