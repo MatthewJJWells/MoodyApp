@@ -1,27 +1,15 @@
 import React from 'react';
-import { Dashboard, Home, SignUp } from './Screens/index';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { Home } from './Screens/index';
+import { Provider } from 'react-redux';
+import userReducer from './Redux/reducers/userReducer';
+import { createStore } from 'redux';
 
-export type RootStackParamList = {
-  Home: undefined;
-  SignUp: undefined;
-};
-
-const Stack = createStackNavigator<RootStackParamList>();
-
+const store = createStore(userReducer);
 const App: React.FC<Record<string, never>> = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={Dashboard}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen name="SignUp" component={SignUp} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <Home />
+    </Provider>
   );
 };
 
