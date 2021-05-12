@@ -1,8 +1,9 @@
 import React from 'react';
 import { Dashboard, Login, SignUp } from '../index';
 import { NavigationContainer } from '@react-navigation/native';
-import { Stack, HomeProps } from '../../Interfaces';
+import { HomeProps } from '../../Interfaces';
 import { loginConnector } from '../../Utilities/Login.utlilities';
+import { Stack } from '../../Utilities/Home.utilities';
 
 const Home: React.FC<HomeProps> = ({ userName, isLoggedIn }) => {
   console.log(isLoggedIn, userName);
