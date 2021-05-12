@@ -18,8 +18,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     width: width,
-    height: 250,
+    height: 225,
     // backgroundColor: '#fefefe'
+  },
+  switchContainer: {
+    width: 80,
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   inputContainer: {
     display: 'flex',
