@@ -14,11 +14,13 @@ const addRecord = async function (record: Record): Promise<unknown> {
   try {
     const response = await fetch(url + '/records', {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({
         record: record,
       }),
     });
-    console.log('record', record);
     return response;
   } catch (error) {
     console.error(error);
@@ -31,9 +33,8 @@ const getUserRecords = async function (user_id: number): Promise<unknown> {
     const response = await fetch(`${url}/records/${user_id}`, {
       method: 'GET',
     });
-    const jsonify = await response.json();
-    console.log('response jsonified: ', jsonify);
-    return response;
+    const records = await response.json();
+    return records;
   } catch (error) {
     console.error(error);
     return error;
