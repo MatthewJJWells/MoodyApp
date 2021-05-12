@@ -1,19 +1,9 @@
 import React from 'react';
 import styles from './Login.style';
 import { View, Text, TextInput } from 'react-native';
-import { FormButton } from '../../components';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../Home/Home.screen';
+import FormButton from '../../Components/FormButton/FormButton.screen';
 import { connect } from 'react-redux';
-
-type LoginScreenNavigationProp = StackNavigationProp<
-  RootStackParamList,
-  'Login'
->;
-
-interface LoginProps {
-  navigation: LoginScreenNavigationProp;
-}
+import { LoginProps } from '../../Interfaces';
 
 const Login: React.FC<LoginProps> = ({ navigation, submit }) => {
   const navigationSignUp = () => {
