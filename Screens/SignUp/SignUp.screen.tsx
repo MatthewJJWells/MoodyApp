@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './SignUp.style';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
-import { FormButton } from '../../components';
+import { FormButton } from '../../Components';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../App';
+import { RootStackParamList } from '../Home/Home.screen';
 
 type SignUpScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -16,7 +16,7 @@ interface SignupProps {
 
 const SignUp: React.FC<SignupProps> = ({ navigation }) => {
   const navigationCreateAccount = () => {
-    navigation.navigate('Home');
+    navigation.navigate('Login');
   };
   return (
     <View style={styles.container}>

@@ -1,4 +1,4 @@
-import { StyleSheet, Platform, Dimensions} from 'react-native';
+import { StyleSheet, Platform, Dimensions } from 'react-native';
 
 const width = Dimensions.get('window').width;
 
@@ -6,13 +6,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    marginHorizontal:5,
+    marginHorizontal: 5,
     backgroundColor: '#fff',
     paddingTop: Platform.OS === 'android' ? 30 : 0,
     alignItems: 'center',
   },
   box: {
-    width: '100%'
+    width: '100%',
   },
   inputContainer: {
     display: 'flex',
@@ -26,14 +26,11 @@ const styles = StyleSheet.create({
     // backgroundColor: 'red',
     marginVertical: 7.5,
   },
-  textInputStyle: {
-    color: '#fefefe',
-  },
   header: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    flex: 1
+    flex: 1,
   },
   footer: {
     display: 'flex',
@@ -44,7 +41,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
-    flex: 2
+    flex: 2,
   },
   buttonStyle: {
     display: 'flex',
@@ -52,13 +49,13 @@ const styles = StyleSheet.create({
     width: 300,
     height: 50,
     borderRadius: 10,
-    backgroundColor: '#fefefe',
+    borderWidth: 2,
+    borderColor: '#fefefe',
     marginVertical: 7.5,
   },
   buttonText: {
-    textAlign: 'center'
-  }
-
+    textAlign: 'center',
+  },
 });
 
 export default styles;
