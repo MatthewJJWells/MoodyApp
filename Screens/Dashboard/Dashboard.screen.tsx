@@ -18,7 +18,10 @@ const moodyPosts = [
   { id: 3, date: '30/004/21', mood_text: 'meh', rating: 5, personal_note: '' },
 ];
 
-const Dashboard: React.FC<DashboardProps> = ({ userName }) => {
+const Dashboard: React.FC<DashboardProps> = ({ navigation, userName }) => {
+  const navigationAddMood = () => {
+    navigation.navigate('AddMood');
+  };
   return (
     <View style={styles.container}>
       <Text>{userName}</Text>
@@ -30,7 +33,7 @@ const Dashboard: React.FC<DashboardProps> = ({ userName }) => {
           renderItem={({ item }) => <MoodPost item={item} />}
         ></FlatList>
       </View>
-      <MoodEntryButton></MoodEntryButton>
+      <MoodEntryButton onPress={navigationAddMood}></MoodEntryButton>
     </View>
   );
 };
