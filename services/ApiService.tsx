@@ -18,6 +18,7 @@ const addRecord = async function (record: Record): Promise<unknown> {
         record: record,
       }),
     });
+    console.log('record', record);
     return response;
   } catch (error) {
     console.error(error);
@@ -25,4 +26,18 @@ const addRecord = async function (record: Record): Promise<unknown> {
   }
 };
 
-export { addRecord };
+const getUserRecords = async function (user_id: number): Promise<unknown> {
+  try {
+    const response = await fetch(`${url}/records/${user_id}`, {
+      method: 'GET',
+    });
+    const jsonify = await response.json();
+    console.log('response jsonified: ', jsonify);
+    return response;
+  } catch (error) {
+    console.error(error);
+    return error;
+  }
+};
+
+export { addRecord, getUserRecords };
