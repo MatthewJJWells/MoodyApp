@@ -2,12 +2,14 @@ import React from 'react';
 import styles from './Login.style';
 import { View, Text, TextInput } from 'react-native';
 import FormButton from '../../Components/FormButton/FormButton.screen';
-import { LoginProps, loginConnector } from '../../Interfaces';
+import { LoginProps } from '../../Interfaces';
+import { loginConnector } from '../../Utilities/Login.utlilities';
 
 const Login: React.FC<LoginProps> = ({ navigation, submit }) => {
   const navigationSignUp = () => {
     navigation.navigate('SignUp');
   };
+  const matt = 'Matt';
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -18,7 +20,7 @@ const Login: React.FC<LoginProps> = ({ navigation, submit }) => {
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.textInputStyle}
-            placeholder="Email"
+            placeholder="Username"
           ></TextInput>
         </View>
         <View style={styles.inputContainer}>
@@ -27,7 +29,10 @@ const Login: React.FC<LoginProps> = ({ navigation, submit }) => {
             placeholder="Password"
           ></TextInput>
         </View>
-        <FormButton buttonName="Login" onPress={submit}></FormButton>
+        <FormButton
+          buttonName="Login"
+          onPress={() => submit(matt)}
+        ></FormButton>
         <FormButton
           buttonName="Sign Up"
           onPress={navigationSignUp}

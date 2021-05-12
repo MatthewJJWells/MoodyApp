@@ -8,6 +8,8 @@ import {
   Date,
   MoodPost,
 } from '../../Components/index';
+import { loginConnector } from '../../Utilities/Login.utlilities';
+import { DashboardProps } from '../../Interfaces/';
 
 const moodyPosts = [
   { id: 1, date: '21/03/21', mood_text: 'happy', rating: 8, personal_note: '' },
@@ -15,14 +17,15 @@ const moodyPosts = [
   { id: 3, date: '30/004/21', mood_text: 'meh', rating: 5, personal_note: '' },
 ];
 
-const Dashboard: React.FC = () => {
+const Dashboard: React.FC<DashboardProps> = ({ userName }) => {
   return (
     <View style={styles.container}>
+      <Text>{userName}</Text>
       <Date />
       <View style={styles.entriesContainer}>
         <FlatList
           data={moodyPosts}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => <MoodPost item={item} />}
         ></FlatList>
       </View>
@@ -31,4 +34,4 @@ const Dashboard: React.FC = () => {
   );
 };
 
-export default Dashboard;
+export default loginConnector(Dashboard);
