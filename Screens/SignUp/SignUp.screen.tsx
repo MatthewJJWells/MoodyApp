@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './SignUp.style';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
-import { FormButton } from '../../components';
+import { FormButton } from '../../Components';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../Home/Home.screen';
 

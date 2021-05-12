@@ -4,6 +4,12 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { connect } from 'react-redux';
+import styles from './Home.style';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { FormButton } from '../../Components';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../App';
+
 
 export type RootStackParamList = {
   Login: undefined;
