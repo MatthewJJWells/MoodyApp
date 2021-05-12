@@ -2,8 +2,7 @@ import React from 'react';
 import styles from './Login.style';
 import { View, Text, TextInput } from 'react-native';
 import FormButton from '../../Components/FormButton/FormButton.screen';
-import { connect } from 'react-redux';
-import { LoginProps } from '../../Interfaces';
+import { LoginProps, loginConnector } from '../../Interfaces';
 
 const Login: React.FC<LoginProps> = ({ navigation, submit }) => {
   const navigationSignUp = () => {
@@ -38,12 +37,4 @@ const Login: React.FC<LoginProps> = ({ navigation, submit }) => {
   );
 };
 
-const mapDispatchToProps = (
-  dispatch: (arg0: { type: string; payload: string }) => void,
-) => {
-  return {
-    submit: () => dispatch({ type: 'LOGIN', payload: 'Matt' }),
-  };
-};
-
-export default connect(null, mapDispatchToProps)(Login);
+export default loginConnector(Login);

@@ -1,10 +1,9 @@
 import React from 'react';
 import { Dashboard, Login, SignUp } from '../index';
 import { NavigationContainer } from '@react-navigation/native';
-import { connect } from 'react-redux';
-import { Stack } from '../../Interfaces';
+import { Stack, loginConnector, LoginProps } from '../../Interfaces';
 
-const Home: React.FC<Record<string, never>> = ({ userName, isLoggedIn }) => {
+const Home: React.FC<LoginProps> = ({ userName, isLoggedIn }) => {
   console.log(isLoggedIn, userName);
   if (isLoggedIn) {
     return <Dashboard />;
@@ -23,10 +22,4 @@ const Home: React.FC<Record<string, never>> = ({ userName, isLoggedIn }) => {
   );
 };
 
-const mapStateToProps = (state: { isLoggedIn: boolean; userName: string }) => {
-  return {
-    isLoggedIn: state.isLoggedIn,
-  };
-};
-
-export default connect(mapStateToProps)(Home);
+export default loginConnector(Home);
