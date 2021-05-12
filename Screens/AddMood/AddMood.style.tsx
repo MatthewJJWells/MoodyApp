@@ -19,9 +19,9 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     width: width,
     height: 225,
-    // backgroundColor: '#fefefe'
+    backgroundColor: '#fefefe',
   },
-  switchContainer: {
+  toggleContainer: {
     width: 80,
     display: 'flex',
     justifyContent: 'space-between',

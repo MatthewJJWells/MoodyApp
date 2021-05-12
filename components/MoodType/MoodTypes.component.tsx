@@ -6,7 +6,7 @@ import styles from './MoodTypes.style';
 const MoodType: React.FC<{ item?: string | number }> = ({ item }) => {
   return (
     <TouchableOpacity style={styles.buttonStyle}>
-      <Text style={styles.buttonText}>Happy</Text>
+      <Text style={styles.buttonText}>{item}</Text>
     </TouchableOpacity>
   );
 };
