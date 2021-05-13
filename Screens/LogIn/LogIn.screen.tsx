@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import styles from './Login.style';
 import { View, Text, TextInput } from 'react-native';
 import FormButton from '../../Components/FormButton/FormButton.screen';
@@ -6,10 +6,19 @@ import { LoginProps } from '../../Interfaces';
 import { loginConnector } from '../../Utilities/Login.utlilities';
 
 const Login: React.FC<LoginProps> = ({ navigation, submit }) => {
+  const [usersName, setUsersName] = useState('');
+
+  const onChange = (letter: string) => {
+    setUsersName(letter);
+  };
+
+  const handleSubmit = (name: string) => {
+    submit(name);
+  };
+
   const navigationSignUp = () => {
     navigation.navigate('SignUp');
   };
-  const matt = 'Matt';
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -21,6 +30,8 @@ const Login: React.FC<LoginProps> = ({ navigation, submit }) => {
           <TextInput
             style={styles.textInputStyle}
             placeholder="Username"
+            onChangeText={(letter) => onChange(letter)}
+            value={usersName}
           ></TextInput>
         </View>
         <View style={styles.inputContainer}>
@@ -31,7 +42,7 @@ const Login: React.FC<LoginProps> = ({ navigation, submit }) => {
         </View>
         <FormButton
           buttonName="Login"
-          onPress={() => submit(matt)}
+          onPress={() => handleSubmit(usersName)}
         ></FormButton>
         <FormButton
           buttonName="Sign Up"

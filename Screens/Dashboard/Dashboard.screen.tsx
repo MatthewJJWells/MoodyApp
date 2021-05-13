@@ -24,8 +24,8 @@ const Dashboard: React.FC<DashboardProps> = ({ navigation, userName }) => {
   };
   return (
     <View style={styles.container}>
-      <Text>{userName}</Text>
       <Date />
+      <Text>Good Morning {userName}!</Text>
       <View style={styles.entriesContainer}>
         <FlatList
           data={moodyPosts}
