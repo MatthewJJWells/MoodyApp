@@ -5,8 +5,7 @@ import { HomeProps } from '../../Interfaces';
 import { loginConnector } from '../../Utilities/Login.utlilities';
 import { Stack } from '../../Utilities/Home.utilities';
 
-const Home: React.FC<HomeProps> = ({ userName, isLoggedIn }) => {
-  console.log(isLoggedIn, userName);
+const Home: React.FC<HomeProps> = ({ isLoggedIn }) => {
   if (isLoggedIn) {
     return (
       <NavigationContainer>
