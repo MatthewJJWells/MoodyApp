@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home } from './Screens/index';
+import Home from './Screens/Home/Home.screen';
 import { Provider } from 'react-redux';
 import userReducer from './Redux/reducers/userReducer';
 import { createStore } from 'redux';
