@@ -11,6 +11,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     position: 'relative',
   },
+  header: {
+    fontSize: 35,
+    position: 'absolute',
+    top: 50,
+  },
   moodContainer: {
     display: 'flex',
     justifyContent: 'center',
@@ -18,8 +23,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     width: width,
-    height: 225,
-    backgroundColor: '#fefefe',
+    height: 200,
+    // backgroundColor: '#fefefe',
   },
   toggleContainer: {
     width: 80,
