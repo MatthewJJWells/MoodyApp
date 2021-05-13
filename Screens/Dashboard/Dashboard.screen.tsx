@@ -20,7 +20,7 @@ const moodyPosts = [
 
 const Dashboard: React.FC<DashboardProps> = ({ navigation, userName }) => {
   const navigationAddMood = () => {
-    navigation.navigate('AddMood');
+    navigation.navigate('Add Mood');
   };
   return (
     <View style={styles.container}>
