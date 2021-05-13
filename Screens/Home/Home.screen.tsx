@@ -17,7 +17,7 @@ const Home: React.FC<HomeProps> = ({ userName, isLoggedIn }) => {
             component={Dashboard}
             options={{ headerShown: false }}
           />
-          <Stack.Screen name="Add Mood" component={changemyname} />
+          <Stack.Screen name="Add Mood" component={AddMood} />
         </Stack.Navigator>
       </NavigationContainer>
     );
