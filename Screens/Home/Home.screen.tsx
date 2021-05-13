@@ -4,7 +4,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { HomeProps } from '../../Interfaces';
 import { loginConnector } from '../../Utilities/Login.utlilities';
 import { Stack } from '../../Utilities/Home.utilities';
-import changemyname from '../changeMyName/changemyname.screen';
 
 const Home: React.FC<HomeProps> = ({ userName, isLoggedIn }) => {
   console.log(isLoggedIn, userName);
