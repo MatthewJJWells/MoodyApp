@@ -3,7 +3,7 @@ type RootStackParamList = {
   Login: undefined;
   SignUp: undefined;
   Dashboard: undefined;
-  AddMood: undefined;
+  'Add Mood': undefined;
 };
 
 export { RootStackParamList };
