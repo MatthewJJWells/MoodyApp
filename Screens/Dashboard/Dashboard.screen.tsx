@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList } from 'react-native';
 import styles from './DashBoard.style';
+
+import { getUserRecords } from '../../services/ApiService';
 
 import {
   MoodEntryButton,
@@ -19,6 +21,15 @@ const moodyPosts = [
 ];
 
 const Dashboard: React.FC<DashboardProps> = ({ navigation, userName }) => {
+  const [gotRecords] = useState(false);
+  useEffect(() => {
+    console.log("we're doiing things right");
+    if (!gotRecords) {
+      const records = getUserRecords(0);
+      console.log('records:', records);
+    }
+  });
+
   const navigationAddMood = () => {
     navigation.navigate('Add Mood');
   };

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import MoodType from '../../Components/MoodType/MoodTypes.component';
-import CheckBox from '@react-native-community/checkbox';
+// import CheckBox from '@react-native-community/checkbox';
 import styles from './AddMood.style';
 import { MoodLog } from '../../Components/MoodPost/MoodPost.component';
 
@@ -38,11 +38,11 @@ const AddMood: React.FC<MoodLog> = ({ item }) => {
       <View style={styles.moodContainer}>{arrayOfMoods}</View>
 
       <View style={styles.toggleContainer}>
-        <CheckBox
+        {/* <CheckBox
           disabled={false}
           value={toggleCheckBox}
           onValueChange={(newValue) => setToggleCheckBox(newValue)}
-        ></CheckBox>
+        ></CheckBox> */}
         <Text>share?</Text>
       </View>
 
