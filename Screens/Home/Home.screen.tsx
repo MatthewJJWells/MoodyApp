@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dashboard, Login, SignUp } from '../index';
+import { Dashboard, Login, SignUp, AddMood } from '../index';
 import { NavigationContainer } from '@react-navigation/native';
 import { HomeProps } from '../../Interfaces';
 import { loginConnector } from '../../Utilities/Login.utlilities';
