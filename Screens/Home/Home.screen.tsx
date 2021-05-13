@@ -15,7 +15,7 @@ const Home: React.FC<HomeProps> = ({ userName, isLoggedIn }) => {
       <Stack.Navigator>
         <Stack.Screen
           name="Login"
-          component={AddMood}
+          component={Login}
           options={{ headerShown: false }}
         />
         <Stack.Screen name="SignUp" component={SignUp} />
