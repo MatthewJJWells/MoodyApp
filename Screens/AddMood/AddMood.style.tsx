@@ -5,7 +5,7 @@ const width = Dimensions.get('window').width;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     backgroundColor: '#a178b1',
     paddingTop: Platform.OS === 'android' ? 30 : 0,
     alignItems: 'center',
@@ -13,8 +13,9 @@ const styles = StyleSheet.create({
   },
   header: {
     fontSize: 35,
-    position: 'absolute',
-    top: 50,
+    color: '#fefefe',
+    // position: 'absolute',
+    // top: 50,
   },
   moodContainer: {
     display: 'flex',
@@ -36,11 +37,11 @@ const styles = StyleSheet.create({
   inputContainer: {
     display: 'flex',
     justifyContent: 'center',
-    width: width,
-    height: 60,
+    width: '80%',
+    height: '10%',
     backgroundColor: '#fefefe',
-    position: 'absolute',
-    bottom: 0,
+    // position: 'absolute',
+    // bottom: 0,
   },
   addMoodBtn: {
     color: '#fefefe',
@@ -48,6 +49,24 @@ const styles = StyleSheet.create({
 
   textInput: {
     paddingLeft: 10,
+  },
+  buttonStyle: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    // width: 70,
+    // height: 60,
+    padding: 10,
+    borderRadius: 10,
+    backgroundColor: '#a178b1',
+    borderColor: '#fefefe',
+    borderWidth: 2,
+    marginVertical: 5,
+    marginHorizontal: 5,
+  },
+  buttonText: {
+    textAlign: 'center',
+    color: '#fefefe',
   },
 });
 

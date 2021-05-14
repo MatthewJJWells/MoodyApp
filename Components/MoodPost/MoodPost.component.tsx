@@ -2,8 +2,6 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import styles from './MoodPost.style';
 
-import MoodType from '../MoodType/MoodTypes.component';
-
 export interface MoodLog {
   item: {
     id: number;
@@ -20,7 +18,9 @@ const MoodPost: React.FC<MoodLog> = ({ item }) => {
       <View>
         <Text>{item.date}</Text>
       </View>
-      <MoodType item={item.mood_text}></MoodType>
+      <View>
+        <Text>{item.mood_text}</Text>
+      </View>
       <View>
         <Text>{item.rating}</Text>
       </View>
