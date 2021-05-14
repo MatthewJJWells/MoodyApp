@@ -16,7 +16,7 @@ const MoodPost: React.FC<MoodLog> = ({ item }) => {
   return (
     <View style={styles.moodPost}>
       <View>
-        <Text>{item.datetime.slice(0, 10)}</Text>
+        <Text>05-14-2021</Text>
       </View>
       <View>
         <Text>{item.mood_text}</Text>
