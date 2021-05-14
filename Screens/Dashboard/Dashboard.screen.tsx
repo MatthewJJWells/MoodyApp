@@ -20,7 +20,7 @@ const Dashboard: React.FC<DashboardProps> = ({ navigation, userName }) => {
 
   useEffect(() => {
     if (!gotRecords) {
-      getUserRecords(15).then((records) => {
+      getUserRecords(0).then((records) => {
         setMoodyPosts(records);
         setGotRecords(true);
       });
