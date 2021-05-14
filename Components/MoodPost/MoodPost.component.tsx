@@ -16,16 +16,16 @@ const MoodPost: React.FC<MoodLog> = ({ item }) => {
   return (
     <View style={styles.moodPost}>
       <View>
-        <Text>05-14-2021</Text>
+        <Text style={styles.item}>05-14-2021</Text>
       </View>
       <View>
-        <Text>{item.mood_text}</Text>
+        <Text style={styles.item}>{item.mood_text}</Text>
       </View>
       <View>
-        <Text>Intensity: {item.rating}</Text>
+        <Text style={styles.item}>Intensity: {item.rating}</Text>
       </View>
       <View>
-        <Text>Note: {item.personal_note}</Text>
+        <Text style={styles.item}>Note: {item.personal_note}</Text>
       </View>
     </View>
   );

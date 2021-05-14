@@ -58,14 +58,15 @@ const styles = StyleSheet.create({
     // height: 60,
     padding: 10,
     borderRadius: 10,
-    backgroundColor: '#a178b1',
-    borderColor: '#fefefe',
-    borderWidth: 2,
+    backgroundColor: '#fefefe',
     marginVertical: 5,
     marginHorizontal: 5,
   },
   buttonText: {
     textAlign: 'center',
+    color: '#a178b1',
+  },
+  share: {
     color: '#fefefe',
   },
 });

@@ -58,7 +58,7 @@ const AddMood: React.FC<AddMoodProps> = ({
           value={toggleCheckBox}
           onValueChange={(newValue) => setToggleCheckBox(newValue)}
         ></CheckBox>
-        <Text>Share?</Text>
+        <Text style={styles.share}>Share?</Text>
       </View>
 
       <TouchableOpacity
