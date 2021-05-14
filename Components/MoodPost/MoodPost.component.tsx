@@ -22,10 +22,10 @@ const MoodPost: React.FC<MoodLog> = ({ item }) => {
         <Text>{item.mood_text}</Text>
       </View>
       <View>
-        <Text>{item.rating}</Text>
+        <Text>Intensity: {item.rating}</Text>
       </View>
       <View>
-        <Text>{item.personal_note}</Text>
+        <Text>Note: {item.personal_note}</Text>
       </View>
     </View>
   );
