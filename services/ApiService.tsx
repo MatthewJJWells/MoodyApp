@@ -28,13 +28,15 @@ const addRecord = async function (record: Record): Promise<unknown> {
   }
 };
 
-const getUserRecords = async function (user_id: number): Promise<unknown> {
+const getUserRecords = async function (
+  user_id: number,
+): Promise<(prevState: never[]) => never[]> {
   try {
     const response = await fetch(`${url}/records/${user_id}`, {
       method: 'GET',
     });
     const records = await response.json();
-    return records;
+    return records.reverse();
   } catch (error) {
     console.error(error);
     return error;

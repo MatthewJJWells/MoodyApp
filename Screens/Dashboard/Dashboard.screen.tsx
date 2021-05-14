@@ -1,23 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList } from 'react-native';
 import styles from './DashBoard.style';
-import { addRecord, getUserRecords } from '../../services/ApiService';
+import { getUserRecords } from '../../services/ApiService';
 import { MoodEntryButton, Date, MoodPost } from '../../Components/index';
 import { loginConnector } from '../../Utilities/Login.utlilities';
 import { DashboardProps } from '../../Interfaces/';
 
-const Dashboard: React.FC<DashboardProps> = ({ navigation, userName }) => {
-  const [moodyPosts, setMoodyPosts] = useState([]);
+const Dashboard: React.FC<DashboardProps> = ({
+  navigation,
+  userName,
+  moodPosts,
+  setMoodPosts,
+}) => {
   const [gotRecords, setGotRecords] = useState(false);
 
   useEffect(() => {
     if (!gotRecords) {
-      getUserRecords(0).then((records) => {
-        setMoodyPosts(records);
+      getUserRecords(99).then((records) => {
+        setMoodPosts(records);
         setGotRecords(true);
       });
     }
-  });
+  }, [moodPosts]);
 
   const navigationAddMood = () => {
     navigation.navigate('Add Mood');
@@ -25,10 +29,12 @@ const Dashboard: React.FC<DashboardProps> = ({ navigation, userName }) => {
   return (
     <View style={styles.container}>
       <Date />
-      <Text>Good Morning {userName}!</Text>
+      <Text style={styles.title}>Good Afternoon {userName}</Text>
       <View style={styles.entriesContainer}>
         <FlatList
-          data={moodyPosts}
+          contentContainerStyle={{ display: 'flex', alignItems: 'center' }}
+          showsVerticalScrollIndicator={false}
+          data={moodPosts}
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => <MoodPost item={item} />}
         ></FlatList>

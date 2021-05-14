@@ -18,6 +18,12 @@ const styles = StyleSheet.create({
     borderColor: '#fefefe',
     borderWidth: 2,
   },
+  title: {
+    textAlign: 'center',
+    color: '#fefefe',
+    fontSize: 24,
+    paddingBottom: 5,
+  },
 });
 
 export default styles;

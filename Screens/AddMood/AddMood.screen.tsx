@@ -7,15 +7,24 @@ import {
   createMoodRecord,
 } from '../../Utilities/AddMood.utilities';
 import { addRecord } from '../../services/ApiService';
+import { AddMoodProps } from '../../Interfaces/AddMoodInterface/AddMood.interface';
 
-const AddMood: React.FC<Record<string, never>> = () => {
+const AddMood: React.FC<AddMoodProps> = ({
+  navigation,
+  moodPosts,
+  setMoodPosts,
+}) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   const [currentMood, setCurrentMood] = useState('');
   const [note, setNote] = useState('');
 
+  const navigateDashboard = () => {
+    navigation.navigate('Dashboard');
+  };
   const handleSubmit = () => {
     const moodRecord = createMoodRecord(currentMood, toggleCheckBox, note);
     addRecord(moodRecord);
+    setMoodPosts([moodRecord, ...moodPosts]);
   };
 
   const arrayOfMoods = moodsArray.map((mood) => (
@@ -52,7 +61,12 @@ const AddMood: React.FC<Record<string, never>> = () => {
         <Text>Share?</Text>
       </View>
 
-      <TouchableOpacity onPress={() => handleSubmit()}>
+      <TouchableOpacity
+        onPress={() => {
+          navigateDashboard();
+          handleSubmit();
+        }}
+      >
         <Text style={styles.buttonStyle}>Add Mood</Text>
       </TouchableOpacity>
     </View>

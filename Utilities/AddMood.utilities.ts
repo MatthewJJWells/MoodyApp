@@ -17,6 +17,7 @@ const moodsArray = [
 ];
 
 type MoodRecord = {
+  id: number;
   user_id: number;
   rating: number;
   datetime: Date;
@@ -32,7 +33,8 @@ const createMoodRecord = (
 ): MoodRecord => {
   const currentDate = new Date();
   return {
-    user_id: 0,
+    id: Math.random(),
+    user_id: 99,
     rating: 5,
     datetime: currentDate,
     mood_text: mood,
