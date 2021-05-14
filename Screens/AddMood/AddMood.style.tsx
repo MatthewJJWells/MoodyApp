@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
+    borderRadius: 8,
   },
   inputContainer: {
     display: 'flex',
@@ -40,6 +41,7 @@ const styles = StyleSheet.create({
     width: '80%',
     height: '10%',
     backgroundColor: '#fefefe',
+    borderRadius: 8,
     // position: 'absolute',
     // bottom: 0,
   },

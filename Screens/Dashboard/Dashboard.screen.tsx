@@ -21,7 +21,7 @@ const Dashboard: React.FC<DashboardProps> = ({
         setGotRecords(true);
       });
     }
-  }, [moodPosts]);
+  }, []);
 
   const navigationAddMood = () => {
     navigation.navigate('Add Mood');
