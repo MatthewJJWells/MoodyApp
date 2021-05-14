@@ -1,24 +1,20 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
-import MoodType from '../../Components/MoodType/MoodTypes.component';
 import CheckBox from '@react-native-community/checkbox';
 import styles from './AddMood.style';
 import {
   moodsArray,
   createMoodRecord,
 } from '../../Utilities/AddMood.utilities';
-import { MoodLog } from '../../Components/MoodPost/MoodPost.component';
-import { call } from 'react-native-reanimated';
 import { addRecord } from '../../services/ApiService';
 
-const AddMood: React.FC<MoodLog> = ({ item }) => {
+const AddMood: React.FC<Record<string, never>> = () => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   const [currentMood, setCurrentMood] = useState('');
   const [note, setNote] = useState('');
 
   const handleSubmit = () => {
     const moodRecord = createMoodRecord(currentMood, toggleCheckBox, note);
-    console.log(moodRecord);
     addRecord(moodRecord);
   };
 

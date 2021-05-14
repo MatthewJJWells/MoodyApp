@@ -2,12 +2,7 @@ import React from 'react';
 import { View, Text, FlatList } from 'react-native';
 import styles from './DashBoard.style';
 
-import {
-  MoodEntryButton,
-  MoodType,
-  Date,
-  MoodPost,
-} from '../../Components/index';
+import { MoodEntryButton, Date, MoodPost } from '../../Components/index';
 
 import { loginConnector } from '../../Utilities/Login.utlilities';
 import { DashboardProps } from '../../Interfaces/';
