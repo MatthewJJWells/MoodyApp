@@ -14,6 +14,9 @@ type DashboardProps = {
   isLoggedIn: boolean;
   userName: string;
 } & {
+  moodPosts: never[];
+  setMoodPosts: any;
+} & {
   submit: (userName: string) => void;
 } & DashboardNavigationProps;
 

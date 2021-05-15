@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
+    borderRadius: 8,
   },
   inputContainer: {
     display: 'flex',
@@ -40,6 +41,7 @@ const styles = StyleSheet.create({
     width: '80%',
     height: '10%',
     backgroundColor: '#fefefe',
+    borderRadius: 8,
     // position: 'absolute',
     // bottom: 0,
   },
@@ -58,14 +60,15 @@ const styles = StyleSheet.create({
     // height: 60,
     padding: 10,
     borderRadius: 10,
-    backgroundColor: '#a178b1',
-    borderColor: '#fefefe',
-    borderWidth: 2,
+    backgroundColor: '#fefefe',
     marginVertical: 5,
     marginHorizontal: 5,
   },
   buttonText: {
     textAlign: 'center',
+    color: '#a178b1',
+  },
+  share: {
     color: '#fefefe',
   },
 });

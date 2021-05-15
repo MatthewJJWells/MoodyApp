@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from 'react';
 import styles from './Login.style';
-import { View, Text, TextInput } from 'react-native';
+import { View, Text, TextInput, Image } from 'react-native';
 import FormButton from '../../Components/FormButton/FormButton.screen';
 import { LoginProps } from '../../Interfaces';
 import { loginConnector } from '../../Utilities/Login.utlilities';
@@ -22,7 +22,11 @@ const Login: React.FC<LoginProps> = ({ navigation, submit }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={{ fontSize: 40 }}>Moody App</Text>
+        {/* <Text style={{ fontSize: 40 }}>Moody App</Text> */}
+        <Image
+          source={require('./moodyLogo.png')}
+          style={{ width: 175, height: 175 }}
+        />
       </View>
       <View style={styles.footer}>
         <Text>Home/Log In Screen</Text>
