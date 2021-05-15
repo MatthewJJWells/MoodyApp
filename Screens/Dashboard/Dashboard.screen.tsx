@@ -35,7 +35,7 @@ const Dashboard: React.FC<DashboardProps> = ({
           contentContainerStyle={{ display: 'flex', alignItems: 'center' }}
           showsVerticalScrollIndicator={false}
           data={moodPosts}
-          keyExtractor={(item) => item.id.toString()}
+          keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => <MoodPost item={item} />}
         ></FlatList>
       </View>

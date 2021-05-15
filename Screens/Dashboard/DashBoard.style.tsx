@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
     overflow: 'scroll',
     width: width,
     flex: 1,
-    borderWidth: 2,
   },
   title: {
     textAlign: 'center',

@@ -24,6 +24,7 @@ const addRecord = async function (record: Record): Promise<unknown> {
     return response;
   } catch (error) {
     console.error(error);
+
     return error;
   }
 };
