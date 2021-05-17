@@ -24,6 +24,8 @@ const AddMood: React.FC<AddMoodProps> = ({
   const handleSubmit = () => {
     const moodRecord = createMoodRecord(currentMood, toggleCheckBox, note);
     addRecord(moodRecord);
+    setNote('');
+    setCurrentMood('');
     setMoodPosts([moodRecord, ...moodPosts]);
   };
 

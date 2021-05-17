@@ -20,6 +20,23 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#fefefe',
   },
+  recordContainer: {
+    width: '100%',
+  },
+  date_mood_int: {
+    // backgroundColor: 'red',
+    display: 'flex',
+    flexDirection: 'row',
+    width: '100%',
+    flex: 1,
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+  },
+  note_container: {
+    paddingLeft: 30,
+    paddingRight: 30,
+    alignItems: 'center',
+  },
 });
 
 export default styles;

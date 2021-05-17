@@ -39,7 +39,6 @@ const Dashboard: React.FC<DashboardProps> = ({
           renderItem={({ item }) => <MoodPost item={item} />}
         ></FlatList>
       </View>
-      <MoodEntryButton onPress={navigationAddMood}></MoodEntryButton>
     </View>
   );
 };

@@ -1,18 +1,38 @@
 import React, { useState } from 'react';
 import { Dashboard, Login, SignUp, AddMood } from '../index';
+import Analytics from '../Analytics/Analytics.screen';
 import { NavigationContainer } from '@react-navigation/native';
 import { HomeProps } from '../../Interfaces';
 import { loginConnector } from '../../Utilities/Login.utlilities';
 import { Stack } from '../../Utilities/Home.utilities';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Ionicons } from '@expo/vector-icons';
+
+const BottomTabs = createBottomTabNavigator();
+
+type TabBarIconProps = {
+  name: any;
+  colour?: string;
+};
+
+const TabBarIcon: React.FC<TabBarIconProps> = ({
+  name,
+  colour,
+}: TabBarIconProps) => {
+  return <Ionicons size={25} name={name} colour={colour}></Ionicons>;
+};
 
 const Home: React.FC<HomeProps> = ({ isLoggedIn }) => {
   const [moodPosts, setMoodPosts] = useState([]);
 
-  if (isLoggedIn) {
-    return (
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Dashboard" options={{ headerShown: false }}>
+  return (
+    <NavigationContainer>
+      {isLoggedIn ? (
+        <BottomTabs.Navigator>
+          <BottomTabs.Screen
+            name="Dashboard"
+            options={{ tabBarIcon: () => <TabBarIcon name="home-outline" /> }}
+          >
             {(props) => (
               <Dashboard
                 moodPosts={moodPosts}
@@ -20,8 +40,14 @@ const Home: React.FC<HomeProps> = ({ isLoggedIn }) => {
                 {...props}
               ></Dashboard>
             )}
-          </Stack.Screen>
-          <Stack.Screen name="Add Mood">
+          </BottomTabs.Screen>
+
+          <BottomTabs.Screen
+            name="Add Mood"
+            options={{
+              tabBarIcon: () => <TabBarIcon name="add-circle-outline" />,
+            }}
+          >
             {(props) => (
               <AddMood
                 moodPosts={moodPosts}
@@ -29,21 +55,25 @@ const Home: React.FC<HomeProps> = ({ isLoggedIn }) => {
                 {...props}
               ></AddMood>
             )}
-          </Stack.Screen>
+          </BottomTabs.Screen>
+          <BottomTabs.Screen
+            name="Analytics"
+            component={Analytics}
+            options={{
+              tabBarIcon: () => <TabBarIcon name="analytics-outline" />,
+            }}
+          />
+        </BottomTabs.Navigator>
+      ) : (
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen name="SignUp" component={SignUp} />
         </Stack.Navigator>
-      </NavigationContainer>
-    );
-  }
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Login"
-          component={Login}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen name="SignUp" component={SignUp} />
-      </Stack.Navigator>
+      )}
     </NavigationContainer>
   );
 };
