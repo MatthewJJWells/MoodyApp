@@ -23,6 +23,8 @@ const Dashboard: React.FC<DashboardProps> = ({
     }
   }, []);
 
+  //test test test
+
   const navigationAddMood = () => {
     navigation.navigate('Add Mood');
   };
