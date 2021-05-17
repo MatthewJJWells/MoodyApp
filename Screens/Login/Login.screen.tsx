@@ -25,7 +25,7 @@ const Login: React.FC<LoginProps> = ({ navigation, submit }) => {
         {/* <Text style={{ fontSize: 40 }}>Moody App</Text> */}
         <Image
           source={require('./moodyLogo.png')}
-          style={{ width: 175, height: 175 }}
+          style={{ width: 175, height: 175, borderRadius: 10 }}
         />
       </View>
       <View style={styles.footer}>

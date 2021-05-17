@@ -7,7 +7,6 @@ import { loginConnector } from '../../Utilities/Login.utlilities';
 import { DashboardProps } from '../../Interfaces/';
 
 const Dashboard: React.FC<DashboardProps> = ({
-  navigation,
   userName,
   moodPosts,
   setMoodPosts,
@@ -23,14 +22,16 @@ const Dashboard: React.FC<DashboardProps> = ({
     }
   }, []);
 
-  const navigationAddMood = () => {
-    navigation.navigate('Add Mood');
-  };
   return (
     <View style={styles.container}>
-      <Date />
-      <Text style={styles.title}>Good Afternoon {userName}</Text>
+      <View style={styles.dashboard_header}>
+        <Date />
+        <Text style={styles.title}>Good Afternoon {userName}</Text>
+      </View>
       <View style={styles.entriesContainer}>
+        <View>
+          <Text style={styles.title}>Mood History</Text>
+        </View>
         <FlatList
           contentContainerStyle={{ display: 'flex', alignItems: 'center' }}
           showsVerticalScrollIndicator={false}
