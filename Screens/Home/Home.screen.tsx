@@ -31,7 +31,7 @@ const Home: React.FC<HomeProps> = ({ isLoggedIn }) => {
         <BottomTabs.Navigator>
           <BottomTabs.Screen
             name="Dashboard"
-            options={{ tabBarIcon: () => <TabBarIcon name="home-sharp" /> }}
+            options={{ tabBarIcon: () => <TabBarIcon name="home-outline" /> }}
           >
             {(props) => (
               <Dashboard
@@ -41,17 +41,11 @@ const Home: React.FC<HomeProps> = ({ isLoggedIn }) => {
               ></Dashboard>
             )}
           </BottomTabs.Screen>
-          <BottomTabs.Screen
-            name="Analytics"
-            component={Analytics}
-            options={{
-              tabBarIcon: () => <TabBarIcon name="analytics-sharp" />,
-            }}
-          />
+
           <BottomTabs.Screen
             name="Add Mood"
             options={{
-              tabBarIcon: () => <TabBarIcon name="analytics-sharp" />,
+              tabBarIcon: () => <TabBarIcon name="add-circle-outline" />,
             }}
           >
             {(props) => (
@@ -62,6 +56,13 @@ const Home: React.FC<HomeProps> = ({ isLoggedIn }) => {
               ></AddMood>
             )}
           </BottomTabs.Screen>
+          <BottomTabs.Screen
+            name="Analytics"
+            component={Analytics}
+            options={{
+              tabBarIcon: () => <TabBarIcon name="analytics-outline" />,
+            }}
+          />
         </BottomTabs.Navigator>
       ) : (
         <Stack.Navigator>
