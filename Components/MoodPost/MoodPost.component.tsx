@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import styles from './MoodPost.style';
+import getTimeDate from '../../Utilities/MoodPost.utilities';
 
 export interface MoodLog {
   item: {
@@ -13,12 +14,14 @@ export interface MoodLog {
 }
 
 const MoodPost: React.FC<MoodLog> = ({ item }) => {
+  const timeDate = getTimeDate(item.datetime);
   return (
     <View style={styles.moodPost}>
       <View style={styles.recordContainer}>
         <View style={styles.date_mood_int}>
-          <View>
-            <Text style={styles.item}>05-14-2021</Text>
+          <View style={{ display: 'flex', alignItems: 'center' }}>
+            <Text style={styles.item}>{timeDate.date}</Text>
+            <Text style={styles.item}>{timeDate.time}</Text>
           </View>
           <View>
             <Text style={styles.item}>{item.mood_text}</Text>
@@ -37,3 +40,6 @@ const MoodPost: React.FC<MoodLog> = ({ item }) => {
 };
 
 export default MoodPost;
+function time(time: any) {
+  throw new Error('Function not implemented.');
+}

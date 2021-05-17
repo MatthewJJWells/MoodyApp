@@ -23,6 +23,11 @@ const styles = StyleSheet.create({
     fontSize: 24,
     paddingBottom: 5,
   },
+  dashboard_header: {
+    borderBottomColor: '#fefefe',
+    borderBottomWidth: 2,
+    width: '100%',
+  },
 });
 
 export default styles;
