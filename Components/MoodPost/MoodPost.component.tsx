@@ -15,8 +15,8 @@ export interface MoodLog {
 const MoodPost: React.FC<MoodLog> = ({ item }) => {
   return (
     <View style={styles.moodPost}>
-      <View style={styles.groupContainer}>
-        <View style={styles.group1}>
+      <View style={styles.recordContainer}>
+        <View style={styles.date_mood_int}>
           <View>
             <Text style={styles.item}>05-14-2021</Text>
           </View>
@@ -28,7 +28,7 @@ const MoodPost: React.FC<MoodLog> = ({ item }) => {
           </View>
         </View>
 
-        <View style={styles.group2}>
+        <View style={styles.note_container}>
           <Text style={styles.item}>Note: {item.personal_note}</Text>
         </View>
       </View>

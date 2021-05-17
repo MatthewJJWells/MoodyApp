@@ -20,10 +20,10 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#fefefe',
   },
-  groupContainer: {
+  recordContainer: {
     width: '100%',
   },
-  group1: {
+  date_mood_int: {
     // backgroundColor: 'red',
     display: 'flex',
     flexDirection: 'row',
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     alignItems: 'center',
   },
-  group2: {
+  note_container: {
     paddingLeft: 30,
     paddingRight: 30,
     alignItems: 'center',
