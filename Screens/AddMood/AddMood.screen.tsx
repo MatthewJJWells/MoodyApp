@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  TouchableHighlight,
+} from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import styles from './AddMood.style';
 import {
@@ -30,13 +36,18 @@ const AddMood: React.FC<AddMoodProps> = ({
   };
 
   const arrayOfMoods = moodsArray.map((mood) => (
-    <TouchableOpacity
+    <TouchableHighlight
       key={mood.mood_text}
       onPress={() => setCurrentMood(mood.mood_text)}
-      style={styles.buttonStyle}
+      underlayColor={'white'}
+      style={
+        currentMood !== mood.mood_text
+          ? styles.buttonStyle
+          : styles.pressedButtonStyle
+      }
     >
       <Text style={styles.buttonText}>{mood.mood_text}</Text>
-    </TouchableOpacity>
+    </TouchableHighlight>
   ));
 
   return (
