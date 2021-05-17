@@ -24,13 +24,16 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   date_mood_int: {
-    // backgroundColor: 'red',
     display: 'flex',
     flexDirection: 'row',
     width: '100%',
     flex: 1,
     justifyContent: 'space-evenly',
     alignItems: 'center',
+    marginBottom: 5,
+  },
+  date_time: {
+    textAlign: 'center',
   },
   note_container: {
     paddingLeft: 30,
