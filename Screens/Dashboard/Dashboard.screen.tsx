@@ -14,6 +14,8 @@ const Dashboard: React.FC<DashboardProps> = ({
 }) => {
   const [gotRecords, setGotRecords] = useState(false);
 
+  console.log(moodPosts);
+
   useEffect(() => {
     if (!gotRecords) {
       getUserRecords(99).then((records) => {
