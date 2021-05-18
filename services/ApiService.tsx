@@ -12,8 +12,6 @@ interface Record {
 
 const addRecord = function (record: Record): Promise<Record> {
   try {
-    // const response = await
-    // let newRecord;
     return fetch(url + '/records', {
       method: 'POST',
       headers: {
@@ -23,15 +21,8 @@ const addRecord = function (record: Record): Promise<Record> {
         record: record,
       }),
     }).then((res) => res.json());
-    // .then((res) => console.log({ res }));
-    // console.log('res:', response.json());
-    // response.json();
-    // console.log(response);
-
-    // return response;
   } catch (error) {
     console.error(error);
-
     return error;
   }
 };

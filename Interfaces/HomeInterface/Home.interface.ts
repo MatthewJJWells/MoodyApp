@@ -2,7 +2,7 @@ type HomeProps = {
   isLoggedIn: boolean;
   userName: string;
 } & {
-  submit: (userName: string) => void;
+  login: (userName: string) => void;
 };
 
 export { HomeProps };

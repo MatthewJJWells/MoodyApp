@@ -5,8 +5,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    // width: 60,
-    // height: 80,
     padding: 10,
     paddingBottom: 0,
     borderRadius: 10,

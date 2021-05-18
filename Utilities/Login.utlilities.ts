@@ -8,11 +8,11 @@ const mapStateToProps = (state: RootState) => {
   };
 };
 const mapDispatchToProps = (
-  dispatch: (arg0: { type: string; payload: string }) => void,
+  dispatch: (arg0: { type: string; payload: string | null }) => void,
 ) => {
   return {
-    submit: (userName: string) =>
-      dispatch({ type: 'LOGIN', payload: userName }),
+    login: (userName: string) => dispatch({ type: 'LOGIN', payload: userName }),
+    logout: () => dispatch({ type: 'LOGOUT', payload: null }),
   };
 };
 

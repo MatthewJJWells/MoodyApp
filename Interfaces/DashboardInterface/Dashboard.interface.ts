@@ -17,7 +17,7 @@ type DashboardProps = {
   moodPosts: never[];
   setMoodPosts: any;
 } & {
-  submit: (userName: string) => void;
+  login: (userName: string) => void;
 } & DashboardNavigationProps;
 
 export { DashboardProps };
