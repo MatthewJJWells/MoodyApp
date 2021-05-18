@@ -85,6 +85,11 @@ const styles = StyleSheet.create({
   share: {
     color: '#fefefe',
   },
+  moodRating: {
+    color: '#fefefe',
+    alignSelf: 'flex-start',
+    marginLeft: 50,
+  },
 });
 
 export default styles;
