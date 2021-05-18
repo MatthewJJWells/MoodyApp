@@ -13,7 +13,7 @@ const SignUp: React.FC<SignupProps> = ({ navigation }) => {
       <View style={styles.header}>
         {/* <Text style={{ fontSize: 40 }}>Moody App</Text> */}
         <Image
-          source={require('./moodyLogo2.png')}
+          source={require('../../assets/moodyLogo.png')}
           style={{ width: 150, height: 150 }}
         />
       </View>

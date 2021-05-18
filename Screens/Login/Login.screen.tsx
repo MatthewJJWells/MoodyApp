@@ -23,7 +23,7 @@ const Login: React.FC<LoginProps> = ({ navigation, login }) => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Image
-          source={require('./moodyLogo.png')}
+          source={require('../../assets/moodyLogo.png')}
           style={{ width: 175, height: 175, borderRadius: 10 }}
         />
       </View>
