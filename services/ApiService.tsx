@@ -10,9 +10,11 @@ interface Record {
   shared: boolean;
 }
 
-const addRecord = async function (record: Record): Promise<unknown> {
+const addRecord = function (record: Record): Promise<Record> {
   try {
-    const response = await fetch(url + '/records', {
+    // const response = await
+    // let newRecord;
+    return fetch(url + '/records', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -20,8 +22,13 @@ const addRecord = async function (record: Record): Promise<unknown> {
       body: JSON.stringify({
         record: record,
       }),
-    });
-    return response;
+    }).then((res) => res.json());
+    // .then((res) => console.log({ res }));
+    // console.log('res:', response.json());
+    // response.json();
+    // console.log(response);
+
+    // return response;
   } catch (error) {
     console.error(error);
 

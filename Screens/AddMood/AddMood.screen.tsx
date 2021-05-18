@@ -27,12 +27,14 @@ const AddMood: React.FC<AddMoodProps> = ({
   const navigateDashboard = () => {
     navigation.navigate('Dashboard');
   };
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    if (currentMood === '') return;
     const moodRecord = createMoodRecord(currentMood, toggleCheckBox, note);
-    addRecord(moodRecord);
+    const addedRecord = await addRecord(moodRecord);
     setNote('');
     setCurrentMood('');
-    setMoodPosts([moodRecord, ...moodPosts]);
+    setMoodPosts([addedRecord, ...moodPosts]);
+    navigateDashboard();
   };
 
   const arrayOfMoods = moodsArray.map((mood) => (
@@ -76,7 +78,6 @@ const AddMood: React.FC<AddMoodProps> = ({
 
       <TouchableOpacity
         onPress={() => {
-          navigateDashboard();
           handleSubmit();
         }}
       >
