@@ -19,7 +19,7 @@ type LoginProps = {
   isLoggedIn: boolean;
   userName: string;
 } & {
-  submit: (userName: string) => void;
+  login: (userName: string) => void;
 } & LoginNavigationProps;
 
 export { LoginProps, RootState };

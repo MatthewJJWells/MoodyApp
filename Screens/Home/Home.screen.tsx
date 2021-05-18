@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Dashboard, Login, SignUp, AddMood } from '../index';
+import { Dashboard, Login, SignUp, AddMood, Settings } from '../index';
 import Analytics from '../Analytics/Analytics.screen';
 import { NavigationContainer } from '@react-navigation/native';
 import { HomeProps } from '../../Interfaces';
@@ -61,6 +61,13 @@ const Home: React.FC<HomeProps> = ({ isLoggedIn }) => {
             component={Analytics}
             options={{
               tabBarIcon: () => <TabBarIcon name="analytics-outline" />,
+            }}
+          />
+          <BottomTabs.Screen
+            name="Settings"
+            component={Settings}
+            options={{
+              tabBarIcon: () => <TabBarIcon name="settings-outline" />,
             }}
           />
         </BottomTabs.Navigator>

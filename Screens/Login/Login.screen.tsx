@@ -5,7 +5,7 @@ import FormButton from '../../Components/FormButton/FormButton.screen';
 import { LoginProps } from '../../Interfaces';
 import { loginConnector } from '../../Utilities/Login.utlilities';
 
-const Login: React.FC<LoginProps> = ({ navigation, submit }) => {
+const Login: React.FC<LoginProps> = ({ navigation, login }) => {
   const [usersName, setUsersName] = useState('');
 
   const onChange = (letter: string) => {
@@ -13,7 +13,7 @@ const Login: React.FC<LoginProps> = ({ navigation, submit }) => {
   };
 
   const handleSubmit = (name: string) => {
-    submit(name);
+    login(name);
   };
 
   const navigationSignUp = () => {
@@ -22,7 +22,6 @@ const Login: React.FC<LoginProps> = ({ navigation, submit }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        {/* <Text style={{ fontSize: 40 }}>Moody App</Text> */}
         <Image
           source={require('./moodyLogo.png')}
           style={{ width: 175, height: 175, borderRadius: 10 }}
