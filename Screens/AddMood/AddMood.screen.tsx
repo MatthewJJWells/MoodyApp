@@ -5,7 +5,6 @@ import {
   TextInput,
   TouchableOpacity,
   TouchableHighlight,
-  ScrollView,
 } from 'react-native';
 import MultiSlider from '@ptomasroos/react-native-multi-slider';
 import CheckBox from '@react-native-community/checkbox';
@@ -25,11 +24,16 @@ const AddMood: React.FC<AddMoodProps> = ({
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   const [currentMood, setCurrentMood] = useState('');
   const [note, setNote] = useState('');
-  const [sliderValue, setSliderValue] = useState(1);
+  const [rating, setRating] = useState(1);
 
   const handleSubmit = async () => {
     if (currentMood === '') return;
-    const moodRecord = createMoodRecord(currentMood, toggleCheckBox, note);
+    const moodRecord = createMoodRecord(
+      currentMood,
+      toggleCheckBox,
+      note,
+      rating,
+    );
     const addedRecord = await addRecord(moodRecord);
     setNote('');
     setCurrentMood('');
@@ -59,24 +63,24 @@ const AddMood: React.FC<AddMoodProps> = ({
       <View>
         <MultiSlider
           onValuesChangeFinish={(values) => {
-            setSliderValue(values[0]);
+            setRating(values[0]);
           }}
           min={1}
           max={10}
           selectedStyle={{
-            backgroundColor: '#fefefe',
-          }}
-          unselectedStyle={{
             backgroundColor: '#F0C7FF',
           }}
-          markerStyle={{
+          unselectedStyle={{
             backgroundColor: '#fefefe',
-            height: 15,
-            width: 15,
+          }}
+          markerStyle={{
+            backgroundColor: '#F0C7FF',
+            height: 22,
+            width: 22,
           }}
         />
       </View>
-      <Text style={styles.moodRating}>Mood rating: {sliderValue}</Text>
+      <Text style={styles.moodRating}>Mood rating: {rating}</Text>
 
       <View style={styles.moodContainer}>{arrayOfMoods}</View>
 
