@@ -11,6 +11,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     position: 'relative',
   },
+  card: {
+    backgroundColor: '#fefefe',
+    borderRadius: 10,
+  },
+  cardTitle: {
+    color: '#fefefe',
+    textAlign: 'center',
+    fontSize: 20,
+    margin: 10,
+  },
 });
 
 export default styles;
