@@ -9,11 +9,10 @@ const moodsArray = [
   { mood_text: 'Cheese' },
   { mood_text: 'Lonely' },
   { mood_text: 'Neutral' },
-  { mood_text: 'Sun' },
-  { mood_text: 'Moon' },
+  { mood_text: 'Excited' },
+  { mood_text: 'Guilty' },
   { mood_text: 'Rage' },
-  { mood_text: 'Rahh' },
-  { mood_text: 'Dangerous' },
+  { mood_text: 'Positive' },
 ];
 
 type MoodRecord = {
