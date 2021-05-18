@@ -5,7 +5,9 @@ import {
   TextInput,
   TouchableOpacity,
   TouchableHighlight,
+  ScrollView,
 } from 'react-native';
+import MultiSlider from '@ptomasroos/react-native-multi-slider';
 import CheckBox from '@react-native-community/checkbox';
 import styles from './AddMood.style';
 import {
@@ -23,6 +25,7 @@ const AddMood: React.FC<AddMoodProps> = ({
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   const [currentMood, setCurrentMood] = useState('');
   const [note, setNote] = useState('');
+  const [scrollEnabled, setScrollEnabled] = useState(true);
 
   const navigateDashboard = () => {
     navigation.navigate('Dashboard');
@@ -53,6 +56,19 @@ const AddMood: React.FC<AddMoodProps> = ({
   return (
     <View style={styles.container}>
       <Text style={styles.header}>How do you feel?</Text>
+
+      <ScrollView scrollEnabled={scrollEnabled}>
+        <MultiSlider
+          onValuesChangeStart={() => {
+            setScrollEnabled(false);
+          }}
+          onValuesChangeFinish={() => {
+            setScrollEnabled(true);
+          }}
+          min={1}
+          max={10}
+        />
+      </ScrollView>
 
       <View style={styles.moodContainer}>{arrayOfMoods}</View>
 
