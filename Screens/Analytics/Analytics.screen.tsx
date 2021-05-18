@@ -7,7 +7,7 @@ import { weeklyMoods, monthlyMoods } from '../../Utilities/Analytics.utilities';
 const Analytics: React.FC = () => {
   return (
     <View style={styles.container}>
-      <Text style={{ textAlign: 'center' }}>Analytics</Text>
+      <Text style={styles.header}>Analytics</Text>
 
       <View>
         <Text style={styles.cardTitle}>Weekly Moods</Text>
@@ -37,7 +37,7 @@ const Analytics: React.FC = () => {
           <PieChart
             data={monthlyMoods}
             width={Dimensions.get('window').width - 16}
-            height={220}
+            height={250}
             chartConfig={{
               backgroundColor: '#1cc910',
               backgroundGradientFrom: '#eff3ff',

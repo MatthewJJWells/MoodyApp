@@ -1,15 +1,19 @@
-import { StyleSheet, Platform, Dimensions } from 'react-native';
-
-const width = Dimensions.get('window').width;
+import { StyleSheet, Platform } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
     backgroundColor: '#a178b1',
     paddingTop: Platform.OS === 'android' ? 30 : 0,
     alignItems: 'center',
     position: 'relative',
+  },
+  header: {
+    color: '#fefefe',
+    fontSize: 30,
+    position: 'absolute',
+    top: 40,
   },
   card: {
     backgroundColor: '#fefefe',
