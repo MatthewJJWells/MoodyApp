@@ -29,12 +29,12 @@ const createMoodRecord = (
   mood: string,
   isChecked: boolean,
   note: string,
-  intensity: number,
+  rating: number,
 ): MoodRecord => {
   const currentDate = new Date();
   return {
     user_id: 99,
-    rating: intensity,
+    rating: rating,
     datetime: currentDate,
     mood_text: mood,
     personal_note: note,

@@ -24,7 +24,7 @@ const AddMood: React.FC<AddMoodProps> = ({
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   const [currentMood, setCurrentMood] = useState('');
   const [note, setNote] = useState('');
-  const [sliderValue, setSliderValue] = useState(1);
+  const [rating, setRating] = useState(1);
 
   const handleSubmit = async () => {
     if (currentMood === '') return;
@@ -32,7 +32,7 @@ const AddMood: React.FC<AddMoodProps> = ({
       currentMood,
       toggleCheckBox,
       note,
-      sliderValue,
+      rating,
     );
     const addedRecord = await addRecord(moodRecord);
     setNote('');
@@ -63,7 +63,7 @@ const AddMood: React.FC<AddMoodProps> = ({
       <View>
         <MultiSlider
           onValuesChangeFinish={(values) => {
-            setSliderValue(values[0]);
+            setRating(values[0]);
           }}
           min={1}
           max={10}
@@ -80,7 +80,7 @@ const AddMood: React.FC<AddMoodProps> = ({
           }}
         />
       </View>
-      <Text style={styles.moodRating}>Mood rating: {sliderValue}</Text>
+      <Text style={styles.moodRating}>Mood rating: {rating}</Text>
 
       <View style={styles.moodContainer}>{arrayOfMoods}</View>
 
