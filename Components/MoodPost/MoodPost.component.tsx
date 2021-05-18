@@ -24,22 +24,28 @@ const MoodPost: React.FC<MoodLog> = ({ item }) => {
     <View style={styles.moodPost}>
       <View style={styles.recordContainer}>
         <View style={styles.date_mood_int}>
-          <View style={{ display: 'flex', alignItems: 'center' }}>
-            <Text style={styles.item}>{timeDate.date}</Text>
-            <Text style={styles.item}>{timeDate.time}</Text>
+          <View style={styles.section1}>
+            <Text style={{ fontSize: 11, color: '#fefefe' }}>
+              {timeDate.date}
+            </Text>
+            <Text style={{ fontSize: 24, color: '#fefefe' }}>
+              {timeDate.time}
+            </Text>
           </View>
-          <View>
+          <View style={styles.section2}>
+            <Text style={styles.fieldTitle}>Mood</Text>
             <Text style={styles.item}>{item.mood_text}</Text>
           </View>
-          <View>
-            <Text style={styles.item}>Intensity: {item.rating}</Text>
+          <View style={styles.section3}>
+            <Text style={styles.fieldTitle}>Intensity</Text>
+            <Text style={styles.item}>{item.rating}</Text>
           </View>
         </View>
 
         {personalNoteShown ? (
           <View>
             <View style={styles.note_container}>
-              <Text style={styles.item}>Note: {item.personal_note}</Text>
+              <Text style={styles.noteText}>Note: {item.personal_note}</Text>
             </View>
             <Pressable
               style={styles.arrow_container}
