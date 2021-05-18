@@ -24,9 +24,6 @@ const AddMood: React.FC<AddMoodProps> = ({
   const [currentMood, setCurrentMood] = useState('');
   const [note, setNote] = useState('');
 
-  const navigateDashboard = () => {
-    navigation.navigate('Dashboard');
-  };
   const handleSubmit = async () => {
     if (currentMood === '') return;
     const moodRecord = createMoodRecord(currentMood, toggleCheckBox, note);
@@ -34,7 +31,7 @@ const AddMood: React.FC<AddMoodProps> = ({
     setNote('');
     setCurrentMood('');
     setMoodPosts([addedRecord, ...moodPosts]);
-    navigateDashboard();
+    navigation.navigate('Dashboard');
   };
 
   const arrayOfMoods = moodsArray.map((mood) => (
