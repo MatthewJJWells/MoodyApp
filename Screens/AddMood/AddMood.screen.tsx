@@ -5,7 +5,6 @@ import {
   TextInput,
   TouchableOpacity,
   TouchableHighlight,
-  ScrollView,
 } from 'react-native';
 import MultiSlider from '@ptomasroos/react-native-multi-slider';
 import CheckBox from '@react-native-community/checkbox';
@@ -29,7 +28,12 @@ const AddMood: React.FC<AddMoodProps> = ({
 
   const handleSubmit = async () => {
     if (currentMood === '') return;
-    const moodRecord = createMoodRecord(currentMood, toggleCheckBox, note);
+    const moodRecord = createMoodRecord(
+      currentMood,
+      toggleCheckBox,
+      note,
+      sliderValue,
+    );
     const addedRecord = await addRecord(moodRecord);
     setNote('');
     setCurrentMood('');
@@ -64,15 +68,15 @@ const AddMood: React.FC<AddMoodProps> = ({
           min={1}
           max={10}
           selectedStyle={{
-            backgroundColor: '#fefefe',
-          }}
-          unselectedStyle={{
             backgroundColor: '#F0C7FF',
           }}
-          markerStyle={{
+          unselectedStyle={{
             backgroundColor: '#fefefe',
-            height: 15,
-            width: 15,
+          }}
+          markerStyle={{
+            backgroundColor: '#F0C7FF',
+            height: 22,
+            width: 22,
           }}
         />
       </View>

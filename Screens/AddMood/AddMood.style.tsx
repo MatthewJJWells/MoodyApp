@@ -86,9 +86,9 @@ const styles = StyleSheet.create({
     color: '#fefefe',
   },
   moodRating: {
+    display: 'flex',
+    justifyContent: 'center',
     color: '#fefefe',
-    alignSelf: 'flex-start',
-    marginLeft: 50,
   },
 });
 
