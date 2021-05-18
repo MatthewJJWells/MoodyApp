@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, Image, Pressable } from 'react-native';
 import styles from './MoodPost.style';
 import getTimeDate from '../../Utilities/MoodPost.utilities';
 
@@ -13,7 +13,12 @@ export interface MoodLog {
   };
 }
 
+import arrowUp from '../../assets/arrow_up.png';
+import arrowDown from '../../assets/arrow_down.png';
+
 const MoodPost: React.FC<MoodLog> = ({ item }) => {
+  const [personalNoteShown, setPersonalNoteShown] = useState(false);
+
   const timeDate = getTimeDate(item.datetime);
   return (
     <View style={styles.moodPost}>
@@ -31,9 +36,45 @@ const MoodPost: React.FC<MoodLog> = ({ item }) => {
           </View>
         </View>
 
-        <View style={styles.note_container}>
-          <Text style={styles.item}>Note: {item.personal_note}</Text>
-        </View>
+        {personalNoteShown ? (
+          <View>
+            <View style={styles.note_container}>
+              <Text style={styles.item}>Note: {item.personal_note}</Text>
+            </View>
+            <Pressable
+              style={styles.arrow_container}
+              onPress={() => {
+                setPersonalNoteShown(false);
+              }}
+            >
+              <Image
+                style={{
+                  width: 400,
+                  height: 10,
+                  resizeMode: 'contain',
+                  alignSelf: 'center',
+                }}
+                source={arrowUp}
+              ></Image>
+            </Pressable>
+          </View>
+        ) : (
+          <Pressable
+            style={styles.arrow_container}
+            onPress={() => {
+              setPersonalNoteShown(true);
+            }}
+          >
+            <Image
+              style={{
+                height: 10,
+                resizeMode: 'contain',
+                alignSelf: 'center',
+              }}
+              source={arrowDown}
+            ></Image>
+          </Pressable>
+        )}
       </View>
     </View>
   );

@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     width: '90%',
-    height: 90,
     padding: 10,
     borderRadius: 10,
     backgroundColor: '#fefefe',
@@ -30,15 +29,20 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    marginBottom: 5,
   },
   date_time: {
     textAlign: 'center',
   },
   note_container: {
+    paddingTop: 15,
     paddingLeft: 30,
     paddingRight: 30,
     alignItems: 'center',
+  },
+  arrow_container: {
+    display: 'flex',
+    paddingTop: 15,
+    paddingBottom: 5,
   },
 });
 
