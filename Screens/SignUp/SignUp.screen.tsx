@@ -11,14 +11,12 @@ const SignUp: React.FC<SignupProps> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        {/* <Text style={{ fontSize: 40 }}>Moody App</Text> */}
         <Image
           source={require('./moodyLogo2.png')}
           style={{ width: 150, height: 150 }}
         />
       </View>
       <View style={styles.footer}>
-        {/* <Text>Sign Up Screen</Text> */}
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.textInputStyle}
@@ -34,13 +32,15 @@ const SignUp: React.FC<SignupProps> = ({ navigation }) => {
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.textInputStyle}
-            placeholder="Phone"
+            placeholder="Password"
+            secureTextEntry
           ></TextInput>
         </View>
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.textInputStyle}
-            placeholder="Password"
+            placeholder="Confirm Password"
+            secureTextEntry
           ></TextInput>
         </View>
         <FormButton

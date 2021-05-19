@@ -1,7 +1,8 @@
 import getEnvVars from '../environment';
+import { MoodRecord } from '../Utilities/AddMood.utilities';
 const { url } = getEnvVars();
 
-interface Record {
+export interface Record {
   user_id: number;
   rating: number;
   datetime: Date;
@@ -27,9 +28,7 @@ const addRecord = function (record: Record): Promise<Record> {
   }
 };
 
-const getUserRecords = async function (
-  user_id: number,
-): Promise<(prevState: never[]) => never[]> {
+const getUserRecords = async function (user_id: number): Promise<MoodRecord[]> {
   try {
     const response = await fetch(`${url}/records/${user_id}`, {
       method: 'GET',

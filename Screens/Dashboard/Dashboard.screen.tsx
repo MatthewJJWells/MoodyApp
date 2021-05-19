@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList } from 'react-native';
 import styles from './DashBoard.style';
 import { getUserRecords } from '../../services/ApiService';
-import { MoodEntryButton, Date, MoodPost } from '../../Components/index';
+import { Date, MoodPost } from '../../Components/index';
 import { loginConnector } from '../../Utilities/Login.utlilities';
 import { DashboardProps } from '../../Interfaces/';
+import { MoodRecord } from '../../Utilities/AddMood.utilities';
 
 const Dashboard: React.FC<DashboardProps> = ({
   userName,
@@ -15,8 +16,8 @@ const Dashboard: React.FC<DashboardProps> = ({
 
   useEffect(() => {
     if (!gotRecords) {
-      getUserRecords(99).then((records) => {
-        setMoodPosts(records);
+      getUserRecords(6754).then((records: MoodRecord[]) => {
+        setMoodPosts(() => records);
         setGotRecords(true);
       });
     }
