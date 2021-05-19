@@ -1,6 +1,7 @@
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../navigationInterfaces';
-
+import { MoodRecord } from '../../Utilities/AddMood.utilities';
+import { Dispatch, SetStateAction } from 'react';
 type AddMoodScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
   'Login'
@@ -11,8 +12,7 @@ interface AddMoodNavigationProps {
 }
 
 type AddMoodProps = {
-  moodPosts: never[];
-  setMoodPosts: any;
+  setMoodPosts: Dispatch<SetStateAction<[] | MoodRecord[]>>;
 } & AddMoodNavigationProps;
 
 export { AddMoodProps };

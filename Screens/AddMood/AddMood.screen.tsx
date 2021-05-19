@@ -16,11 +16,7 @@ import {
 import { addRecord } from '../../services/ApiService';
 import { AddMoodProps } from '../../Interfaces/AddMoodInterface/AddMood.interface';
 
-const AddMood: React.FC<AddMoodProps> = ({
-  navigation,
-  moodPosts,
-  setMoodPosts,
-}) => {
+const AddMood: React.FC<AddMoodProps> = ({ navigation, setMoodPosts }) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   const [currentMood, setCurrentMood] = useState('');
   const [note, setNote] = useState('');
@@ -37,7 +33,7 @@ const AddMood: React.FC<AddMoodProps> = ({
     const addedRecord = await addRecord(moodRecord);
     setNote('');
     setCurrentMood('');
-    setMoodPosts([addedRecord, ...moodPosts]);
+    setMoodPosts((moodPosts) => [addedRecord, ...moodPosts]);
     navigation.navigate('Dashboard');
   };
 

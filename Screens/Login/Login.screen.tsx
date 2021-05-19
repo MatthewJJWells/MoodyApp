@@ -41,6 +41,7 @@ const Login: React.FC<LoginProps> = ({ navigation, login }) => {
           <TextInput
             style={styles.textInputStyle}
             placeholder="Password"
+            secureTextEntry
           ></TextInput>
         </View>
         <FormButton

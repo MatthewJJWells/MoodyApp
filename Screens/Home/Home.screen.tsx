@@ -7,6 +7,7 @@ import { loginConnector } from '../../Utilities/Login.utlilities';
 import { Stack } from '../../Utilities/Home.utilities';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
+import { MoodRecord } from '../../Utilities/AddMood.utilities';
 
 const BottomTabs = createBottomTabNavigator();
 
@@ -23,7 +24,7 @@ const TabBarIcon: React.FC<TabBarIconProps> = ({
 };
 
 const Home: React.FC<HomeProps> = ({ isLoggedIn }) => {
-  const [moodPosts, setMoodPosts] = useState([]);
+  const [moodPosts, setMoodPosts] = useState<[] | MoodRecord[]>([]);
 
   return (
     <NavigationContainer>
@@ -49,20 +50,23 @@ const Home: React.FC<HomeProps> = ({ isLoggedIn }) => {
             }}
           >
             {(props) => (
-              <AddMood
-                moodPosts={moodPosts}
-                setMoodPosts={setMoodPosts}
-                {...props}
-              ></AddMood>
+              <AddMood setMoodPosts={setMoodPosts} {...props}></AddMood>
             )}
           </BottomTabs.Screen>
           <BottomTabs.Screen
             name="Analytics"
-            component={Analytics}
             options={{
               tabBarIcon: () => <TabBarIcon name="analytics-outline" />,
             }}
-          />
+          >
+            {(props) => (
+              <Analytics
+                moodPosts={moodPosts}
+                setMoodPosts={setMoodPosts}
+                {...props}
+              ></Analytics>
+            )}
+          </BottomTabs.Screen>
           <BottomTabs.Screen
             name="Settings"
             component={Settings}

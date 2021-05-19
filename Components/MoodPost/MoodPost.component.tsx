@@ -2,15 +2,10 @@ import React, { useState } from 'react';
 import { View, Text, Image, Pressable } from 'react-native';
 import styles from './MoodPost.style';
 import getTimeDate from '../../Utilities/MoodPost.utilities';
+import { MoodRecord } from '../../Utilities/AddMood.utilities';
 
 export interface MoodLog {
-  item: {
-    id: number;
-    datetime: string;
-    mood_text: string;
-    rating: number;
-    personal_note: string;
-  };
+  item: MoodRecord;
 }
 
 import arrowUp from '../../assets/arrow_up.png';
@@ -87,6 +82,3 @@ const MoodPost: React.FC<MoodLog> = ({ item }) => {
 };
 
 export default MoodPost;
-function time(time: any) {
-  throw new Error('Function not implemented.');
-}

@@ -16,6 +16,7 @@ const moodsArray = [
 ];
 
 type MoodRecord = {
+  id?: number;
   user_id: number;
   rating: number;
   datetime: Date;
@@ -32,7 +33,7 @@ const createMoodRecord = (
 ): MoodRecord => {
   const currentDate = new Date();
   return {
-    user_id: 99,
+    user_id: 6754,
     rating: rating,
     datetime: currentDate,
     mood_text: mood,
@@ -41,4 +42,4 @@ const createMoodRecord = (
   };
 };
 
-export { moodsArray, createMoodRecord };
+export { MoodRecord, moodsArray, createMoodRecord };
