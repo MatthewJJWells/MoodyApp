@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from 'react';
 import styles from './Login.style';
-import { View, Text, TextInput, Image } from 'react-native';
+import { View, TextInput, Image } from 'react-native';
 import FormButton from '../../Components/FormButton/FormButton.screen';
 import { LoginProps } from '../../Interfaces';
 import { loginConnector } from '../../Utilities/Login.utlilities';
@@ -28,7 +28,6 @@ const Login: React.FC<LoginProps> = ({ navigation, login }) => {
         />
       </View>
       <View style={styles.footer}>
-        <Text>Home/Log In Screen</Text>
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.textInputStyle}
