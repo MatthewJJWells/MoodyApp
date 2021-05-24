@@ -61,7 +61,7 @@ npm start
 
 ## Roadmap
 
-MoodyApp is in its first developmental release. Future releases will include deployment on AWS, will let users set notifications to prompt them to update their moods, and will allow users to share their mood records with friends on the app.
+MoodyApp is in its first developmental release. Future releases will include deployment, will let users set notifications to prompt them to update their moods, and will allow users to share their mood records with friends on the app.
 
 ## Contributors
 
